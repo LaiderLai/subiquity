@@ -295,7 +295,7 @@ class MirrorController(SubiquityController):
                 " configuration is already being applied"
             )
         source_entry = self.app.base_model.source.current
-        if source_entry.variant == "core":
+        if source_entry.variant == "core" or source_entry.variant == "oem":
             self.test_apt_configurer = None
         else:
             self.test_apt_configurer = get_apt_configurer(
@@ -355,7 +355,7 @@ class MirrorController(SubiquityController):
         staged: Optional[str] = None
         candidates: List[str] = []
         source_entry = self.app.base_model.source.current
-        if source_entry.variant == "core":
+        if source_entry.variant == "core" or source_entry.variant == "oem":
             relevant = False
         else:
             relevant = True

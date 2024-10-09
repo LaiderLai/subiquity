@@ -474,7 +474,10 @@ class SubiquityModel:
         if self.target is None:
             # i.e. reset_partition_only
             return
-        if self.source.current.variant == "core":
+        if (
+            self.source.current.variant == "core"
+            or self.source.current.variant == "oem"
+        ):
             # can probably be supported but requires changes
             return
         for path, content, mode in self._cloud_init_files():

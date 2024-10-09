@@ -40,6 +40,7 @@ class OEMModel:
             "server": False,
             "desktop": True,
             "core": False,
+            "oem": False,
         }
 
     def make_autoinstall(self) -> Dict[str, Union[str, bool]]:

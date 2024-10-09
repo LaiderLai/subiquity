@@ -169,6 +169,7 @@ class InstallController(SubiquityController):
         return (
             self.model.target is not None
             and self.model.source.current.variant != "core"
+            and self.model.source.current.variant != "oem"
         )
 
     def write_autoinstall_config(self) -> None:
